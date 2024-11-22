@@ -1,16 +1,21 @@
 {
-    "TestName": "ACSC Windows Hardening Guidelines",
+    "TestName": "Required Applications",
     "createdBy": "Alvin Hall",
     "Categories" : {
-        "Notepad++": {
-            "TestType": "AddRemove",
-            "DisplayName": "Notepad++",
-            "MinimumVersion": "1.0.0"
-        },
-        "VideoLAN VLC Player": {
-            "TestType": "AddRemove",
-            "DisplayName": "VLC Player",
-            "MinimumVersion": "1.0.0"
-        }
+        "Name": "Required Applications",
+        "Tests": [
+            { 
+                "TestName" : "Notepad++",
+                "TestType": "AddRemove",
+                "DisplayName": "Notepad++ (64-bit x64)",
+                "MinimumVersion": "1.0.0"
+            },
+            {
+                "TestName": "VideoLAN VLC Player",
+                "TestType": "AddRemove",
+                "DisplayName": "VLC media player",
+                "MinimumVersion": "3.0.18.0"
+            }
+        ]
     }
 }

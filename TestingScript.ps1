@@ -20,20 +20,21 @@
         Initial script and folder structure creation
 #>
 
-If (!(Get-Module -Name Pester | Where-Object { $_.Version -gt 5.6 })) {
+If (!(Get-Module -Name Pester | Where-Object { $_.Version -gt [version]5.6 })) {
     Install-Module -Name Pester -MinimumVersion 5.6 -Force -SkipPublisherCheck
 }
 Import-Module -Name Pester -MinimumVersion 5.6
 
-#region Load helper functions
+#region Scriptwide Variables
 $scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
+#endregion
+
+#region Load helper functions
 $functionPath = "$scriptPath\Functions"
-
 $helperFunctions = @(Get-ChildItem -Path $functionPath -Filter "*.ps1" -ErrorAction SilentlyContinue)
-
 Foreach($import in $helperFunctions) {
     Try {
-        . $import.fullname
+        . $($import.fullname)
     }
     Catch {
         Write-Error -Message "Failed to import function $($import.fullname): $_"
@@ -41,30 +42,39 @@ Foreach($import in $helperFunctions) {
 }
 #endregion
 
+#region Load tests
+$TestsPath = "$scriptPath\Tests"
+$TestFiles = Get-ChildItem -Path $TestsPath -Filter "*.json"
+#endregion
+
 #region Pester Tests
-Describe 'Windows Version and Edition' {
-    BeforeAll {
-        $CIM_OS = Get-CimInstance -Namespace 'Root/CIMv2' -ClassName 'Win32_OperatingSystem'
-    }
-
-    It 'OS Version should be Windows 11 23H2' {
-        $CIM_OS.Version | Should -Be '10.0.22631'
-    }
-    It 'OS Caption should be "Microsoft Windows 11 Pro"' {
-        $CIM_OS.Caption | Should -Be 'Microsoft Windows 11 Pro'
+$testCounter = 0
+$testCount = $TestFiles.count
+ForEach ($TestFile in $TestFiles) {
+    $Counter++
+    $testJson = Get-Content -Path $TestFile.fullname |  Out-String | ConvertFrom-Json
+    ForEach ($category in $($testJson.Categories)) {
+        Write-Host $($category.Name)
+        ForEach ($test in $($category.Tests)) {
+            Describe $($test.TestName) {
+                Switch ($Test.TestType) {
+                    'AddRemove' {
+                        BeforeAll {
+                            $InstalledPrograms = Get-ARPEntries
+                        }
+                        It "Program $($Test.DisplayName) is installed and at least version $($Test.MinimumVersion)" {
+                            $Application = $InstalledPrograms | Where-Object { $_.DisplayName -eq $($Test.DisplayName) } -ErrorAction Continue
+                            { Get-Variable -Name Application -ErrorAction Stop } | Should -Not -Throw
+                            [version]($Application.Version) -ge [version]$($Test.MinimumVersion) | Should -Be $true
+                        }
+                    }
+                    'RegistryValue' {}
+                    default {
+                        Write-Error "Unknown Test Type"
+                    }
+                }
+            }
+        }
     }
 }
-
-Describe 'Installed Applications' {
-    BeforeAll {
-        $InstalledPrograms = Get-ARPEntries
-    }
-    
-    It 'Google Chrome should be installed and at least version v129.0.6668.90 ' {
-        $Chrome = $InstalledPrograms | Where-Object { $_.DisplayName -eq 'Google Chrome' } -ErrorAction Continue
-        { Get-Variable -Name Chrome -ErrorAction Stop } | Should -Not -Throw
-        [version]($Chrome.Version) -ge [version]'129.0.6668.90' | Should -Be $true
-    }
-}
-
 #endregion
