@@ -51,26 +51,32 @@ $TestFiles = Get-ChildItem -Path $TestsPath -Filter "*.json"
 $testCounter = 0
 $testCount = $TestFiles.count
 ForEach ($TestFile in $TestFiles) {
-    $Counter++
+    $testCounter++
     $testJson = Get-Content -Path $TestFile.fullname |  Out-String | ConvertFrom-Json
+    Write-Progress -id 1 -Activity "Running tests" -Status "Running test cases for $($testJson.TestName)" -PercentComplete (($testCounter/$testCount)*100)
     ForEach ($category in $($testJson.Categories)) {
-        Write-Host $($category.Name)
-        ForEach ($test in $($category.Tests)) {
-            Describe $($test.TestName) {
+        ForEach ($Test in $($category.Tests)) {
+            Write-Progress -id 2 -Activity "Running $($TestFile.TestName) tests" -Status "Running test: $($Test.TestName)" -PercentComplete (($testCounter/$testCount)*100)
+            #Start-Sleep -milliseconds 10
+            Describe "$($Test.TestName)" {
                 Switch ($Test.TestType) {
                     'AddRemove' {
                         BeforeAll {
                             $InstalledPrograms = Get-ARPEntries
                         }
-                        It "Program $($Test.DisplayName) is installed and at least version $($Test.MinimumVersion)" {
+                        It " Program $($Test.DisplayName) is installed and at least version $($Test.MinimumVersion)" {
                             $Application = $InstalledPrograms | Where-Object { $_.DisplayName -eq $($Test.DisplayName) } -ErrorAction Continue
                             { Get-Variable -Name Application -ErrorAction Stop } | Should -Not -Throw
-                            [version]($Application.Version) -ge [version]$($Test.MinimumVersion) | Should -Be $true
+                            {[version]$($Application.Version) -ge [version]$($Test.MinimumVersion)} | Should -Be $true
                         }
                     }
-                    'RegistryValue' {}
+                    'RegistryValue' {
+                        It "$($Test.TestName) is set to $($Test.Setting)" {
+                            {(Get-ItemProperty -Path $Test.RegistryPath).$($Test.Value) -eq $($Test.Data)} | Should -be $true
+                        }
+                    }
                     default {
-                        Write-Error "Unknown Test Type"
+                        # Write-Host "Unknown Test Type" -ForegroundColor Red -BackgroundColor Yellow
                     }
                 }
             }

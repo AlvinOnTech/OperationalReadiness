@@ -7,11 +7,20 @@
             "Tests": [
                 {
                     "TestName": "Prevent enabling lock screen camera",
-                    "Setting": "Enabled"
+                    "Setting": "Enabled",
+                    "TestType": "RegistryValue",
+                    "RegistryPath": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Personalization",
+                    "Value": "NoLockScreenCamera",
+                    "Data": "1"
                 },
                 {
                     "TestName": "Prevent enabling lock screen slide show",
-                    "Setting": "Enabled"
+                    "Setting": "Enabled",
+                    "TestType": "RegistryValue",
+                    "RegistryPath": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Personalization",
+                    "Value": "NoLockScreenSlideshow",
+                    "Data": "1"
+
                 }
             ]
         },
@@ -807,7 +816,7 @@
                 {
                     "TestName": "Script ActiveX controls marked safe for scripting",
                     "Setting": "Disable"
-                }
+                },
                 {
                     "TestName": "Scripting of Java applets",
                     "Setting": "Disable"

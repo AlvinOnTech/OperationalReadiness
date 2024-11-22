@@ -8,7 +8,7 @@
                 "TestName" : "Notepad++",
                 "TestType": "AddRemove",
                 "DisplayName": "Notepad++ (64-bit x64)",
-                "MinimumVersion": "1.0.0"
+                "MinimumVersion": "8.5.10"
             },
             {
                 "TestName": "VideoLAN VLC Player",
