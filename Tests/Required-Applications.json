@@ -1,0 +1,16 @@
+{
+    "TestName": "ACSC Windows Hardening Guidelines",
+    "createdBy": "Alvin Hall",
+    "Categories" : {
+        "Notepad++": {
+            "TestType": "AddRemove",
+            "DisplayName": "Notepad++",
+            "MinimumVersion": "1.0.0"
+        },
+        "VideoLAN VLC Player": {
+            "TestType": "AddRemove",
+            "DisplayName": "VLC Player",
+            "MinimumVersion": "1.0.0"
+        }
+    }
+}
