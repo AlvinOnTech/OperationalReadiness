@@ -1,0 +1,289 @@
+{
+    "TestName": "ACSC Windows Hardening Guidelines",
+    "createdBy": "Alvin Hall",
+    "Categories" : {
+        "Administrative Templates > Control Panel > Personalization" : {
+            "Prevent enabling lock screen camera": {},
+            "Prevent enabling lock screen slide show": {}
+        },
+        "Administrative Templates > MS Security Guide" : {
+            "Apply UAC restrictions to local accounts on network logons": {},
+            "Configure SMB v1 client driver": {},
+            "Configure MrxSmb10 driver": {},
+            "Configure SMB v1 server": {},
+            "Enable Structured Exception Handling Overwrite Protection (SEHOP)": {},
+            "WDigest Authentication (disabling may require KB2871997)": {}
+        },
+        "Administrative Templates > MSS (Legacy)" : {},
+        "Administrative Templates > Network > DNS Client" : {},
+        "Administrative Templates > Network > Network Connections" : {},
+        "Administrative Templates > Network > Network Provider" : {},
+        "Administrative Templates > Network > Windows Connection Manager" : {},
+        "Administrative Templates > Start Menu and Taskbar > Notifications" : {},
+        "Administrative Templates > System > Credentials Delegation" : {},
+        "Administrative Templates > System > Device Installation > Device Installation Restrictions" : {},
+        "Administrative Templates > System > Early Launch Antimalware" : {},
+        "Administrative Templates > System > Group Policy" : {},
+        "Administrative Templates > System > Internet Communication Management > Internet Communication settings" : {},
+        "Administrative Templates > System > Local Security Authority" : {},
+        "Administrative Templates > System > Power Management > Sleep Settings" : {},
+        "Administrative Templates > System > Remote Assistance" : {},
+        "Administrative Templates > System > Remote Procedure Call" : {},
+        "Administrative Templates > Windows Components > App runtime" : {},
+        "Administrative Templates > Windows Components > AutoPlay Policies" : {},
+        "Administrative Templates > Windows Components > BitLocker Drive Encryption > Fixed Data Drives" : {},
+        "Administrative Templates > Windows Components > BitLocker Drive Encryption > Removable Data Drives" : {},
+        "Administrative Templates > Windows Components > Credential User Interface" : {},
+        "Administrative Templates > Windows Components > Event Log Service > Application" : {},
+        "Administrative Templates > Windows Components > Event Log Service > Security" : {},
+        "Administrative Templates > Windows Components > Event Log Service > System" : {},
+        "Administrative Templates > Windows Components > File Explorer" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Advanced Page" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Internet Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Intranet Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Local Machine Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Internet Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Intranet Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Local Machine Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Restricted Sites Zon" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Locked-Down Trusted Sites Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Restricted Sites Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Internet Control Panel > Security Page > Trusted Sites Zone" : {},
+        "Administrative Templates > Windows Components > Internet Explorer" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Add-on Management" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Consistent Mime Handling" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Mime Sniffing Safety Feature" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > MK Protocol Security Restriction" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Notification bar" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Protection From Zone Elevation" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Restrict ActiveX Install" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Restrict File Download" : {},
+        "Administrative Templates > Windows Components > Internet Explorer > Security Features > Scripted Window Security Restrictions" : {},
+        "Administrative Templates > Windows Components > Microsoft Defender Antivirus > MAPS" : {},
+        "Administrative Templates > Windows Components > Microsoft Defender Antivirus > Real-time Protection" : {},
+        "Administrative Templates > Windows Components > Microsoft Defender Antivirus > Scan" : {},
+        "Administrative Templates > Windows Components > Microsoft Defender Antivirus" : {},
+        "Administrative Templates > Windows Components > Remote Desktop Services > Remote Desktop Connection Client" : {},
+        "Administrative Templates > Windows Components > Remote Desktop Services > Remote Desktop Session Host > Device and Resource Redirection" : {},
+        "Administrative Templates > Windows Components > Remote Desktop Services > Remote Desktop Session Host > Security" : {},
+        "Administrative Templates > Windows Components > RSS Feeds" : {},
+        "Administrative Templates > Windows Components > Windows Logon Options" : {},
+        "Administrative Templates > Windows Components > Windows PowerShell" : {},
+        "Administrative Templates > Windows Components > Windows Remote Management (WinRM) > WinRM Client" : {},
+        "Administrative Templates > Windows Components > Windows Remote Management (WinRM) > WinRM Service" : {},
+        "Auditing": {
+            "Account Logon Audit Credential Validation": {},
+            "Account Logon Logoff Audit Account Lockout": {},
+            "Account Logon Logoff Audit Group Membership": {},
+            "Account Logon Logoff Audit Logon": {},
+            "Audit Authentication Policy Change": {},
+            "Audit Changes to Audit Policy": {},
+            "Audit File Share Access": {},
+            "Audit Other Logon Logoff Events": {},
+            "Audit Security Group Management": {},
+            "Audit Security System Extension": {},
+            "Audit Special Logon": {},
+            "Audit User Account Management": {},
+            "Detailed Tracking Audit PNP Activity": {},
+            "Detailed Tracking Audit Process Creation": {},
+            "Object Access Audit Detailed File Share": {},
+            "Object Access Audit Other Object Access Events": {},
+            "Object Access Audit Removable Storage": {},
+            "Policy Change Audit MPSSVC Rule Level Policy Change": {},
+            "Policy Change Audit Other Policy Change Events": {},
+            "Privilege Use Audit Sensitive Privilege Use": {},
+            "System Audit Other System Events": {},
+            "System Audit Security State Change": {},
+            "System Audit System Integrity": {}
+        },
+        "Browser" : {
+            "Allow Password Manager": {},
+            "Allow Smart Screen": {},
+            "Prevent Cert Error Overrides": {},
+            "Prevent Smart Screen Prompt Override": {},
+            "Prevent Smart Screen Prompt Override For Files": {}
+        },
+        "Data Protection": {
+            "Allow Direct Memory Access": {}
+        },
+        "Defender": {
+            "Allow Archive Scanning": {},
+            "Allow Behavior Monitoring": {},
+            "Allow Cloud Protection": {},
+            "Allow Full Scan Removable Drive Scanning": {},
+            "Allow On Access Protection": {},
+            "Allow Realtime Monitoring": {},
+            "Allow scanning of all downloaded files and attachments": {},
+            "Allow Script Scanning": {},
+            "Block execution of potentially obfuscated scripts": {},
+            "Block Win32 API calls from Office macros": {},
+            "Block Office communication application from creating child processes": {},
+            "Block all Office applications from creating child processes": {},
+            "Block Adobe Reader from creating child processes": {},
+            "Block credential stealing from the Windows local security authority subsystem": {},
+            "Block JavaScript or VBScript from launching downloaded executable content": {},
+            "Block untrusted and unsigned processes that run from USB": {},
+            "Block Office applications from creating executable content": {},
+            "Block Office applications from injecting code into other processes": {},
+            "Block executable content from email client and webmail": {},
+            "Cloud Block Level": {},
+            "Cloud Extended Timeout": {},
+            "Disable Local Admin Merge": {},
+            "Enable File Hash Computation": {},
+            "Enable Network Protection": {},
+            "Hide Exclusions From Local Admins": {},
+            "PUA Protection": {},
+            "Real Time Scan Direction": {},
+            "Submit Samples Consent": {}
+        },
+        "Device Guard": {
+            "Configure System Guard Launch": {},
+            "Credential Guard": {},
+            "Enable Virtualization Based Security": {},
+            "Require Platform Security Features": {}
+        },
+        "Device Lock": {
+            "Device Password Enabled": {},
+            "Device Password History": {},
+            "Min Device Password Length": {}
+        },
+        "DMA Guard": {
+            "Device Enumeration Policy": {}
+        },
+        "Experience": {
+            "Allow Windows Spotlight (User)": {},
+            "Allow Windows Consumer Features": {},
+            "Allow Third Party Suggestions In Windows Spotlight (User)": {}
+        },
+        "Firewall": {
+            "Domain Profile": {
+                "Enable Domain Network Firewall": {},
+                "Enable Log Dropped Packets": {},
+                "Default Outbound Action": {},
+                "Disable Inbound Notifications": {},
+                "Log Max File Size": {},
+                "Default Inbound Action for Domain Profile": {},
+                "Enable Log Success Connections": {}
+            },
+            "Private Firewall": {
+                "Enable Private Network Firewall": {},
+                "Log Max File Size": {},
+                "Default Inbound Action for Private Profile": {},
+                "Enable Log Success Connections": {},
+                "Enable Log Dropped Packets": {},
+                "Disable Inbound Notifications": {},
+                "Default Outbound Action": {}
+            },
+            "Public Firewall" : {
+                "Enable Public Network Firewall": {},
+                "Enable Log Dropped Packets": {},
+                "Log Max File Size": {},
+                "Default Outbound Action": {},
+                "Disable Inbound Notifications": {},
+                "Allow Local Policy Merge": {},
+                "Default Inbound Action for Public Profile": {},
+                "Enable Log Success Connections": {},
+                "Allow Local Ipsec Policy Merge": {}
+            }
+        },
+        "Lanman Workstation": {
+            "Enable Insecure Guest Logons": {}
+        },
+        "LAPS": {
+            "Backup Directory": {}
+        },
+        "Local Policies Security Options": {
+            "Accounts Limit Local Account Use Of Blank Passwords To Console Logon Only": {},
+            "Interactive Logon Machine Inactivity Limit": {},
+            "Interactive Logon Smart Card Removal Behavior": {},
+            "Microsoft Network Client Digitally Sign Communications Always": {},
+            "Microsoft Network Client Send Unencrypted Password To Third Party SMB Servers": {},
+            "Microsoft Network Server Digitally Sign Communications Always": {},
+            "Network Access Do Not Allow Anonymous Enumeration Of SAM Accounts": {},
+            "Network Access Do Not Allow Anonymous Enumeration Of Sam Accounts And Shares": {},
+            "Network Access Restrict Anonymous Access To Named Pipes And Shares": {},
+            "Network Access Restrict Clients Allowed To Make Remote Calls To SAM": {},
+            "Network Security Do Not Store LAN Manager Hash Value On Next Password Change": {},
+            "Network Security LAN Manager Authentication Level": {},
+            "Network Security Minimum Session Security For NTLMSSP Based Clients": {},
+            "Network Security Minimum Session Security For NTLMSSP Based Servers": {},
+            "User Account Control Behavior Of The Elevation Prompt For Administrators": {},
+            "User Account Control Behavior Of The Elevation Prompt For Standard Users": {},
+            "User Account Control Detect Application Installations And Prompt For Elevation": {},
+            "User Account Control Only Elevate UI Access Applications That Are Installed In Secure Locations": {},
+            "User Account Control Run All Administrators In Admin Approval Mode": {},
+            "User Account Control Use Admin Approval Mode": {},
+            "User Account Control Virtualize File And Registry Write Failures To Per User Locations": {}
+        },
+        "Local Security Authority": {
+            "Configure Lsa Protected Process": {}
+        },
+        "Microsoft App Store": {
+            "Allow Game DVR": {},
+            "MSI Allow User Control Over Install": {},
+            "MSI Always Install With Elevated Privileges": {}
+        },
+        "Microsoft Edge": {
+            "Configure Microsoft Defender SmartScreen": {},
+            "Prevent bypassing Microsoft Defender SmartScreen prompts for sites": {}
+        },
+        "Privacy": {
+            "Let Apps Activate With Voice Above Lock": {}
+        },
+        "Search": {
+            "Allow Indexing Encrypted Stores Or Items": {}
+        },
+        "Smart Screen": {
+            "Enable Smart Screen In Shell": {},
+            "Prevent Override For Files In Shell": {},
+            "Notify Malicious": {},
+            "Notify Password Reuse": {},
+            "Notify Unsafe App": {},
+            "Service Enabled": {}
+        },
+        "System Services": {
+            "Configure Xbox Accessory Management Service Startup Mode": {},
+            "Configure Xbox Live Auth Manager Service Startup Mode": {},
+            "Configure Xbox Live Game Save Service Startup Mode": {},
+            "Configure Xbox Live Networking Service Startup Mode": {}
+        },
+        "Task Scheduler": {
+            "Enable Xbox Game Save Task": {}
+        },
+        "User Rights": {
+            "Access From Network": {},
+            "Allow Local Log On": {},
+            "Backup Files And Directories": {},
+            "Create Global Objects": {},
+            "Create Page File": {},
+            "Debug Programs": {},
+            "Deny Access From Network": {},
+            "Deny Remote Desktop Services Log On": {},
+            "Impersonate Client": {},
+            "Load Unload Device Drivers": {},
+            "Manage Auditing And Security Log": {},
+            "Manage Volume": {},
+            "Modify Firmware Environment": {},
+            "Profile Single Process": {},
+            "Remote Shutdown": {},
+            "Restore Files And Directories": {},
+            "Take Ownership": {}
+        },
+        "Virtualization Based Technology": {
+            "Hypervisor Enforced Code Integrity": {}
+        },
+        "Wi-Fi Settings": {
+            "Allow Auto Connect To Wi Fi Sense Hotspots": {},
+            "Allow Internet Sharing": {}
+        },
+        "Windows Hello for Business": {
+            "Facial Features Use Enhanced Anti Spoofing" : {}
+        },
+        "Windows Ink Workspace": {
+            "Allow Windows Ink Workspace": {}
+        }
+    }
+}
