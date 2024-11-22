@@ -72,7 +72,7 @@ ForEach ($TestFile in $TestFiles) {
                     }
                     'RegistryValue' {
                         It "$($Test.TestName) is set to $($Test.Setting)" {
-                            {(Get-ItemProperty -Path $Test.RegistryPath).$($Test.Value) -eq $($Test.Data)} | Should -be $true
+                            (Get-ItemProperty -Path $Test.RegistryPath).$($Test.Value) -eq $($Test.Data) | Should -be $true
                         }
                     }
                     default {

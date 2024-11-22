@@ -20,7 +20,6 @@
                     "RegistryPath": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Personalization",
                     "Value": "NoLockScreenSlideshow",
                     "Data": "1"
-
                 }
             ]
         },
@@ -86,7 +85,11 @@
             "Name": "Administrative Templates > Network > DNS Client",
             "Tests": {
                 "TestName": "Turn off multicast name resolution",
-                "Setting": "Enabled"
+                "Setting": "Enabled",
+                "TestType": "RegistryValue",
+                "RegistryPath": "HKLM:\\Software\\Policies\\Microsoft\\Windows NT\\DNSClient",
+                "Value": "EnableMulticast",
+                "Data": "1"
             }
         },
         {
